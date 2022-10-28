@@ -1,8 +1,8 @@
 <div class="row flexBox">
     <div>
         <button type="button" class="btn btn-success" [disabled]="this.cartaData.resultado !== ''" (click)="pedir()" style="margin-right: 7px;">Pedir</button>
-        <button type="button" class="btn btn-primary" [disabled]="this.cartaData.resultado !== ''" (click)=quedarse() >Quedarse</button>
-        <button type="button" class="btn btn-info" [disabled]="this.cartaData.resultado === ''" (click)=reset() style="margin-left: 7px;">Reset</button>
+        <button type="button" class="btn btn-danger" [disabled]="this.cartaData.resultado !== ''" (click)=quedarse() >Quedarse</button>
+        <button type="button" class="btn btn-primary" [disabled]="this.cartaData.resultado === ''" (click)=reset() style="margin-left: 7px;">Reset</button>
     </div>
 </div>
 <br>
