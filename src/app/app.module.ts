@@ -25,6 +25,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
+import {FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import { RegistrarComponent } from './componentes/registrar/registrar.component'
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage())
   ],
-  providers: [AuthService],
+  providers: [AuthService, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

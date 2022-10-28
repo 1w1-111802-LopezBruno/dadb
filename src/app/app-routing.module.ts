@@ -4,11 +4,21 @@ import { JugadorListadoComponent } from './jugadores/jugador-listado/jugador-lis
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 import { PassComponent } from './componentes/pass/pass.component';
+import { AuthGuard } from './guard/auth.guard';
+import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { VerificarMailComponent } from './componentes/verificar-mail/verificar-mail.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/login' ,pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'registrar', component: RegistrarComponent},
-  {path: 'jugar', component: JugadorListadoComponent},
+  {path: 'registrar', component: RegistrarComponent, },
+  {path: 'jugar', component: JugadorListadoComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'olvidoContraseña', component:PassComponent},
+  {path: 'verificar-mail', component: VerificarMailComponent},
+  {path: '**', redirectTo: '/login' ,pathMatch: 'full'},
+
+
 
 
 ];
