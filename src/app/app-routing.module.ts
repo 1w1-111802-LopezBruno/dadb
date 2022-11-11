@@ -7,6 +7,7 @@ import { PassComponent } from './componentes/pass/pass.component';
 import { AuthGuard } from './guard/auth.guard';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { VerificarMailComponent } from './componentes/verificar-mail/verificar-mail.component';
+import { Reporte1Component } from './componentes/reportes/reporte1/reporte1.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login' ,pathMatch: 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
   {path: 'olvidoContraseña', component:PassComponent},
   {path: 'verificar-mail', component: VerificarMailComponent},
+  {path: 'reportes', component: Reporte1Component},
   {path: '**', redirectTo: '/login' ,pathMatch: 'full'},
 
 
