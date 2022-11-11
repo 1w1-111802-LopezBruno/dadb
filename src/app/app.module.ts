@@ -26,6 +26,8 @@ import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { RegistrarComponent } from './componentes/registrar/registrar.component';
 import {FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { NgChartsModule } from 'ng2-charts';
+import { Reporte1Component } from './componentes/reportes/reporte1/reporte1.component';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import {FIREBASE_OPTIONS } from '@angular/fire/compat';
     BotonesComponent,
     LoginComponent,
     NavbarComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    Reporte1Component
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import {FIREBASE_OPTIONS } from '@angular/fire/compat';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    NgChartsModule
   ],
   providers: [AuthService, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent]
